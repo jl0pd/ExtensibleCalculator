@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IncludeInSdk>true</IncludeInSdk> <!-- Read in Directory.Build.targets -->
+  </PropertyGroup>
+
+</Project>

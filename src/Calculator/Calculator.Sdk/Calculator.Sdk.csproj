@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.1.0">
+
+  <PropertyGroup>
+    <PackageType>MSBuildSdk</PackageType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DebugMode /> <!-- avoid  -->
+
+    <EnableDefaultItems>false</EnableDefaultItems> <!-- Manually control each kind of include -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Libs/**" PackagePath="lib/$(TargetFramework)/" Pack="true" />
+    <None Include="Sdk/**" PackagePath="sdk" Pack="true" />
+  </ItemGroup>
+
+</Project>

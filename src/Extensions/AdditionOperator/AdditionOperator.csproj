@@ -1,0 +1,10 @@
+<Project Sdk="Calculator.Sdk/1.0.2">
+
+  <!-- Note that there's no taget framework and reference to Calculator.Common -->
+  
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

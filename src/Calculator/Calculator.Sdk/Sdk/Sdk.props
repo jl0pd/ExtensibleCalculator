@@ -1,0 +1,36 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildThisFileFullPath);$(MSBuildAllProjects)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" /> <!-- import default props -->
+
+  <!-- Here we add default properties that should be inside every extensions.
+       Purpose of SDK to minimize boilerplate code and add required references -->
+
+  <PropertyGroup>
+    <!-- Automatically target right version of runtime in extension projects -->
+    <TargetFramework>net6.0</TargetFramework>
+    <!-- <TargetFramework>net6.0-windows</TargetFramework> -->
+
+    <!-- Explanation: https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support#plugin-with-library-dependencies -->
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+
+    <!-- If your app uses WPF/Winforms then uncomment lines below -->
+    <!-- <UseWPF>true</UseWPF> -->
+    <!-- <UseWindowsForms>true</UseWindowsForms> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Add implicit import to your dlls.
+         These dlls should be added to /Lib/ folder in nupkg file.
+
+         Private="false" ensures that this dll won't be copyed to output folder.
+         Instead, dll will be resolved in runtime by host application.
+         This helps avoid version hell.
+    -->
+    <Reference Include="$(MSBuildThisFileDirectory)../lib/net6.0/Calculator.Common.dll" Private="false" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<Project>
+
+    <!-- Create task to automatically copy build artifacts to SDK project,
+         so we can avoid manual copying -->
+    <Target Name="CopyBuildArtifactsToSdkBuildFolder"
+            Condition="$(IncludeInSdk) == 'true'"
+            AfterTargets="CoreBuild"> <!-- IncludeInSdk our own property, you can name it other way -->
+        <Copy SourceFiles="@(IntermediateAssembly)"
+              DestinationFolder="$(MSBuildThisFileDirectory)/Calculator.Sdk/Libs" />
+    </Target>
+
+</Project>

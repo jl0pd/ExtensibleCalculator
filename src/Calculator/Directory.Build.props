@@ -1,0 +1,18 @@
+<Project>
+
+  <PropertyGroup>
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable> <!-- Other languages may eventually support nullable, so enable for all projects -->
+  </PropertyGroup>
+
+  <PropertyGroup Label="C# specific options"
+                 Condition="$(MSBuildProjectExtension) == '.csproj'">
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+
+</Project>

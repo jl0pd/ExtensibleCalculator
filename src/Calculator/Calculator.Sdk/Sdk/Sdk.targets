@@ -1,0 +1,5 @@
+<Project>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" /> <!-- import default targets -->
+
+  <!-- You can add specific logic here, e.g. enforce correct target framework moniker -->
+</Project>

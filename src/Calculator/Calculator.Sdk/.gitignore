@@ -1,0 +1,2 @@
+# we don't want build artifacts to be included in git
+Libs
